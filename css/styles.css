@@ -65,7 +65,8 @@ h1, h2, h3, p, ul {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
-    background-color: aquamarine;
+
+    /* background-color: aquamarine; */
 }
 
 /* Логотип */
@@ -85,9 +86,15 @@ h1, h2, h3, p, ul {
 }
 
 /* Секція Hero */
+.hero {
+    text-align: center;
+    padding: 200px 0;
+}
+
 .hero .title {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 auto 30px auto;
+    width: 696px;
+
     color: var(--primary-white-color);
     font-weight: 900;
     font-size: 44px;
@@ -95,6 +102,8 @@ h1, h2, h3, p, ul {
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+
+    /* background-color: teal; */
 }
 .hero .button {
     color: var(--primary-white-color);
