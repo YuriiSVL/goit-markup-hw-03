@@ -19,7 +19,7 @@
 
 }
 
-/* Загальні стили */
+/* Загальні стилі */
 
 body {
     background-color: var(--primary-white-color);
@@ -32,6 +32,16 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+h1,
+h2,
+h3,
+p,
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 .title {
     color: var(--title-text-color);
@@ -49,6 +59,7 @@ ul {
 .button:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-text-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .link {
@@ -56,10 +67,6 @@ ul {
     text-decoration: none;
 }
 
-h1, h2, h3, p, ul {
-    margin-top: 0;
-    margin-bottom: 0;
-}
 
 .section {
     padding: 94px 0;
@@ -70,33 +77,28 @@ h1, h2, h3, p, ul {
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    padding: 0 15px;
 
 }
 
-/* ---FLEX--------------------------------------------------------------------- */
+.header {
+    border: 1px solid #ECECEC;
+}
 .header-cont {
     display: flex;
     align-items: center;
-    padding: 24px 0;
+    padding: 24px 15px;
+}
+.nav-list .item:not(:last-child) {
+    margin-right: 50px;
 }
 
 .site-nav {
     display: flex;
     align-items: center;
 }
-
 .nav-list {
     display: flex;
-}
-
-.nav-list .item:not(:last-child) {
-    margin-right: 50px;
-}
-
-.logo {
-    display: flex;
-    display: inline-block;
-    margin-right: 93px;
 }
 
 .contact-list {
@@ -107,11 +109,27 @@ h1, h2, h3, p, ul {
 .contact-list .item+.item {
     margin-left: 50px;
 }
-/* ----------------------------------------------------------------- */
+
+.filter-btn-list {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+.filter-btn-list li + li {
+    margin-left: 8px;
+
+}
+.filter-btn-list li:first-child .button {
+    padding: 6px 25px;
+}
 
 
 /* Логотип */
 .logo {
+    display: flex;
+    display: inline-block;
+    margin-right: 93px;
+
     color: var(--accent-text-color);
     text-decoration: none;    
     font-family: var(--secondary-font-family), sans-serif;
@@ -144,7 +162,6 @@ h1, h2, h3, p, ul {
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
-    /* background-color: teal; */
 }
 .hero .button {
     color: var(--primary-white-color);
@@ -152,6 +169,11 @@ h1, h2, h3, p, ul {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 32px;
 }
 .hero .button:focus, .hero .button:hover {
     background-color: #188CE8;
@@ -174,6 +196,15 @@ h1, h2, h3, p, ul {
     font-size: 14px;
     line-height: 1.71em;
 }
+
+.features-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features-list .item:not(:first-child) {
+    margin-left: 30px;
+}
 /* Секція чим ми займаємося */
 .doing h2 { 
     margin-bottom: 50px;
@@ -181,6 +212,11 @@ h1, h2, h3, p, ul {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+}
+
+.doing-list {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Секція наша команда */
@@ -202,8 +238,24 @@ h1, h2, h3, p, ul {
     line-height: 1.19;
 }
 .team a {
-    display: inline-block;
-    margin-bottom: 30px;
+    display: block;
+    
+}
+
+.team-card {
+    background: var(--primary-white-color);
+    padding: 30px 62px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.team img {
+    display: block;
+}
+.team-list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 /* Сторінка Портфоліо/наші роботи */
@@ -217,11 +269,28 @@ h1, h2, h3, p, ul {
     line-height: 1.88;
 }
 
+.works img {
+    display: block;
+}
+.work-card {
+    border: 1px solid #EEEEEE;
+    padding: 20px 24px;
+    border-top: none;
+}
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
 /* Сторінка Портфоліо/кнопки фільтру */
 .btn-filter {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
+    padding: 6px 22px;
+    border: none;
+    border-radius: 4px;
 }
 
 /* Основна навігація та контакти у хедері */
@@ -266,12 +335,11 @@ h1, h2, h3, p, ul {
     background-color: var(--special-bg-color);
 }
 
-/* Виділення поточної сторінки */
-.nav-list .current-page {
-    color: var(--accent-text-color);
-}
-
 .link:hover,
 .link:focus {
+    color: var(--accent-text-color);
+}
+/* Виділення поточної сторінки */
+.nav-list .current-page {
     color: var(--accent-text-color);
 }
